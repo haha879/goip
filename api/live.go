@@ -43,7 +43,7 @@ func Handler(w http.ResponseWriter, r *http.Request)  {
         huyaobj.Rid = rid
         huyaobj.Cdn = utils.DefaultQuery(r, "cdn", "hwcdn")
         huyaobj.Media = utils.DefaultQuery(r, "media", "flv")
-        huyaobj.Type = utils.DefaultQuery(r, "type", "nodisplay")
+        huyaobj.Type = utils.DefaultQuery(r, "cdntype", "nodisplay")
         if huyaobj.Type == "display" {
           fmt.Fprintf(w, huyaobj.GetLiveUrl().(string))
         } else {
